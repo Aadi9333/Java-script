@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-        .Sub-button{
-            height: 100vh;
-            width: 100vw;
-           border: none;
-            background-color:chocolate;
-            border-radius: 10px;
-            color: white;
-            cursor: pointer; 
-            font-size: 75px;  
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;        
-            
-        }
-        .sub{
-            border: none;
-            background-color: blue;
-            border-radius: 10px;
-            color: white;
-            cursor: pointer;  
-        }
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM-ON/OFF button</title>
+    <title>Document</title>
 </head>
+<style>
+    .Login{
+        height:400px;
+        width:400px;
+        background-color: red;
+        align-items: center;
+        justify-content: space-around;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+    .Login>input,.Login>button{
+        width:80%;
+        height:40px;
+    }
+</style>
 <body>
-    <button class="Sub-button" onclick="
-        if(
-            document.querySelector('.Sub-button').innerText=='On') {
-                document.querySelector('.Sub-button').innerText='Off'
-                document.querySelector('.Sub-button').classList.add('sub')  
-            }
-            else if(document.querySelector('.Sub-button').innerText=='Off') {
-                    document.querySelector('.Sub-button').innerText='On'
-                    document.querySelector('.Sub-button').classList.remove('sub')
-                }           
-               
-        
-        ">On</button>
-    <!-- <script> -->
-        <!-- // console.log(document.body.innerHTML); -->
-        <!-- // document.body.innerHTML='<button>Aadi</button>' -->
-    <!-- </script> -->
+
+    <div class="Login">
+        <input placeholder="EnterYourName" type="Text" id="username"/>
+    <input  placeholder="EnterPassword" type="password" id="Pass"/>
+    <button onclick="
+     Naidu()
+    ">Login</button>
+    <h1 id="name">Hai Aadi</h1>
+    </div>
+    <script>
+        function Naidu(){
+            const password=document.querySelector('#Pass').value
+    const UserName=document.querySelector('#username').value
+    console.log(UserName) 
+    if(password.length>=6 && UserName.length>3){
+        alert('Hai',UserName)
+        document.querySelector('#name').innerText='Hello Aadi'
+    }
+    else if(password.length==0 && UserName.length==0){
+        alert('Please enter Userename and password')
+    }else if(password.length<6 || UserName.length<3){
+        alert('Username or password is wrong')
+    }
     
+        }
+    </script>
 </body>
 </html>
