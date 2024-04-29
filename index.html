@@ -5,48 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    .Login{
-        height:400px;
-        width:400px;
-        background-color: red;
-        align-items: center;
-        justify-content: space-around;
-        display: flex;
-        flex-direction: column;
-        margin: auto;
-    }
-    .Login>input,.Login>button{
-        width:80%;
-        height:40px;
-    }
-</style>
 <body>
-
-    <div class="Login">
-        <input placeholder="EnterYourName" type="Text" id="username"/>
-    <input  placeholder="EnterPassword" type="password" id="Pass"/>
     <button onclick="
-     Naidu()
-    ">Login</button>
-    <h1 id="name">Hai Aadi</h1>
-    </div>
+    RockPaperScissor()
+    if(computermove=='Rock'){
+        alert('Tie!')
+    }
+    else if(computermove=='Paper'){
+        alert('Loose!')
+    }
+    else if(computermove=='Scissor'){
+        alert('You Win!')
+    }        
+        ">Rock</button>
+       <button onclick="
+    RockPaperScissor()
+    if(computermove=='Paper'){
+        alert('Tie!')
+    }
+    else if(computermove=='Rock'){
+        alert('You Win!')
+    }
+    else if(computermove=='Scissor'){
+        alert('Loose!')
+    }
+    ">Paper</button>
+    <button onclick="
+     RockPaperScissor()
+    if(computermove=='Rock'){
+        alert('Loose!')
+    }
+    else if(computermove=='Paper'){
+        alert('You Win!')
+    }
+    else if(computermove=='Scissor'){
+        alert('Tie!')
+    }
+     
+    ">Scissor</button>
     <script>
-        function Naidu(){
-            const password=document.querySelector('#Pass').value
-    const UserName=document.querySelector('#username').value
-    console.log(UserName) 
-    if(password.length>=6 && UserName.length>3){
-        alert('Hai',UserName)
-        document.querySelector('#name').innerText='Hello Aadi'
+        var computermove=''
+        function RockPaperScissor(){
+            var randomnumber= Math.random()
+    console.log(randomnumber)
+    if(randomnumber>0.01 && randomnumber<=0.33){
+        computermove='Rock'
+    } 
+    else if(randomnumber>0.34 && randomnumber<=0.66){
+        computermove='Paper'
     }
-    else if(password.length==0 && UserName.length==0){
-        alert('Please enter Userename and password')
-    }else if(password.length<6 || UserName.length<3){
-        alert('Username or password is wrong')
-    }
-    
+    else(
+        computermove='Scissor'
+    )
         }
     </script>
+    
 </body>
 </html>
