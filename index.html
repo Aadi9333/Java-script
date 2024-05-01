@@ -3,62 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Arrays</title>
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: blueviolet;
+            align-items: center;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 3rem;
+            color: red;
+            margin-bottom: 100px;
+        }
+        button:hover {
+            background-color: chartreuse;
+            cursor: pointer;
+            border-radius: 15px;
+            height: 10vh;
+            width: 5vw;
+        }
+        
+    </style>
 </head>
 <body>
-    <button onclick="
-    RockPaperScissor()
-    if(computermove=='Rock'){
-        alert('Tie!')
-    }
-    else if(computermove=='Paper'){
-        alert('Loose!')
-    }
-    else if(computermove=='Scissor'){
-        alert('You Win!')
-    }        
-        ">Rock</button>
-       <button onclick="
-    RockPaperScissor()
-    if(computermove=='Paper'){
-        alert('Tie!')
-    }
-    else if(computermove=='Rock'){
-        alert('You Win!')
-    }
-    else if(computermove=='Scissor'){
-        alert('Loose!')
-    }
-    ">Paper</button>
-    <button onclick="
-     RockPaperScissor()
-    if(computermove=='Rock'){
-        alert('Loose!')
-    }
-    else if(computermove=='Paper'){
-        alert('You Win!')
-    }
-    else if(computermove=='Scissor'){
-        alert('Tie!')
-    }
-     
-    ">Scissor</button>
+    <h1>0</h1>
+
+    <button onclick="Dice()">Dice!</button>
     <script>
-        var computermove=''
-        function RockPaperScissor(){
-            var randomnumber= Math.random()
-    console.log(randomnumber)
-    if(randomnumber>0.01 && randomnumber<=0.33){
-        computermove='Rock'
-    } 
-    else if(randomnumber>0.34 && randomnumber<=0.66){
-        computermove='Paper'
+    function Dice(){
+        let mr=Math.random()
+    let dicevalue=0;
+    if(mr<=0.166){
+        dicevalue=1;
     }
-    else(
-        computermove='Scissor'
-    )
-        }
+    else if(mr>0.166 && mr<0.32){
+        dicevalue=2;       
+    }
+    if(mr>=0.32 && mr<0.48){
+        dicevalue=3;        
+    }
+    else if(mr>=0.48 && mr<0.54){
+        dicevalue=4;        
+    }
+    if(mr>=0.54 && mr<0.70){
+        dicevalue=5;       
+    }
+    else if(mr>=0.70){
+        dicevalue=6;        
+    }
+        document.querySelector('h1').innerText=dicevalue 
+    }
     </script>
-    
 </body>
 </html>
